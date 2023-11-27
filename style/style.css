@@ -13,6 +13,7 @@ main{
 .my_container{
     width: 85%;
     height: 500px;
+    background-color: black;
 }
 
 .my_top{
@@ -26,7 +27,7 @@ div img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
     border: 2px solid black;
-
+    display: none;
 }
+
