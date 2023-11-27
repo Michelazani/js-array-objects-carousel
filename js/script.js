@@ -40,10 +40,16 @@ const containerEl = document.querySelector('div.my_container')
 for (let i= 0; i < images.length; i++){
     // creo elemento img
     const singleImageEl = document.createElement ('img');
+    const textEl = document.createElement ('h1');
+
     containerEl.appendChild(singleImageEl);
+    singleImageEl.appendChild(textEl);
+
     // per inserire le singole foto nell'html tramite js 
     singleImageEl.src = images[i].image;
 };
+//! come lo scrivo?????
+// textEl.innerHTML= 'Marvel\' s Spiderman Miles Morale'
 
 /*creo variabile dove seleziono tutte le immagini e che poi
 mi permette di vedere solo una singola immagina selezionandola con il valore dell'indice all'interno delle parentesi []*/
@@ -62,12 +68,29 @@ buttonUpElement.addEventListener('click', function (){
     insideEl[activeIndex].classList.add('d-inline-block');
 });
 
-
-
 // creo funzione per il click down
 buttonDownElement.addEventListener('click', function (){
     insideEl[activeIndex].classList.remove('d-inline-block');
     activeIndex++;
     insideEl[activeIndex].classList.add('d-inline-block');
-    
 });
+
+// variabile che fa ripetizione ogni 3 secondi
+const additeration = setInterval(addEveryIteration,3000);
+
+
+
+function addEveryIteration(){
+insideEl[activeIndex].classList.remove('d-inline-block');
+activeIndex++;
+insideEl[activeIndex].classList.add('d-inline-block');
+}
+
+
+/*
+function removeEveryIteration (){
+    insideEl[activeIndex].classList.remove('d-inline-block');
+    activeIndex--;
+    insideEl[activeIndex].classList.add('d-inline-block'); 
+}
+*/
