@@ -76,7 +76,7 @@ buttonDownElement.addEventListener('click', function (){
 });
 
 // variabile che fa ripetizione ogni 3 secondi
-const additeration = setInterval(addEveryIteration,3000);
+const clock = setInterval(addEveryIteration,3000);
 
 
 
