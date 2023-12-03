@@ -46,10 +46,11 @@ for (let i= 0; i < images.length; i++){
     singleImageEl.appendChild(textEl);
 
     // per inserire le singole foto nell'html tramite js 
-    singleImageEl.src = images[i].image;
+      singleImageEl.src = images[i].image;
+
+      textEl.innerText = images[i].text;
 };
-//! come lo scrivo?????
-// textEl.innerHTML= 'Marvel\' s Spiderman Miles Morale'
+
 
 /*creo variabile dove seleziono tutte le immagini e che poi
 mi permette di vedere solo una singola immagina selezionandola con il valore dell'indice all'interno delle parentesi []*/
@@ -64,14 +65,14 @@ const buttonDownElement = document.getElementById('down');
 // creo funzione per il click up
 buttonUpElement.addEventListener('click', function (){
     insideEl[activeIndex].classList.remove('d-inline-block');
-    activeIndex--;
+    activeIndex = (activeIndex - 1 + images.length) % images.length;
     insideEl[activeIndex].classList.add('d-inline-block');
 });
 
 // creo funzione per il click down
 buttonDownElement.addEventListener('click', function (){
     insideEl[activeIndex].classList.remove('d-inline-block');
-    activeIndex++;
+    activeIndex = (activeIndex + 1) % images.length;
     insideEl[activeIndex].classList.add('d-inline-block');
 });
 
@@ -82,7 +83,7 @@ const clock = setInterval(addEveryIteration,3000);
 
 function addEveryIteration(){
 insideEl[activeIndex].classList.remove('d-inline-block');
-activeIndex++;
+activeIndex = (activeIndex + 1) % images.length;
 insideEl[activeIndex].classList.add('d-inline-block');
 }
 
